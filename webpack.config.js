@@ -37,7 +37,7 @@ const clientConfig = {
   mode: 'development',
   target: 'web',
   entry: {
-    'multipleRoutes.js': path.resolve(__dirname, 'src/public/multipleRoutes.js')
+    'app.js': path.resolve(__dirname, 'src/public/app.js')
   },
   module: {
     rules: [js]

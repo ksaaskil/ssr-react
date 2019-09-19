@@ -4,7 +4,7 @@ import path from 'path'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter as Router } from 'react-router-dom'
-import MultipleRoutes from './public/components/MultipleRoutes'
+import App from './public/components/App'
 
 const app = express()
 
@@ -56,7 +56,7 @@ app.get('*', (req, res) => {
 
   const component = ReactDOMServer.renderToString(
     <Router location={req.url} context={context}>
-      <MultipleRoutes />
+      <App />
     </Router>
   )
 

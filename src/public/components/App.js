@@ -43,7 +43,7 @@ const Topic = ({ match }) => (
   </div>
 )
 
-const MultipleRoutes = () => (
+const App = () => (
   <div>
     <ul>
       <li>
@@ -65,4 +65,4 @@ const MultipleRoutes = () => (
   </div>
 )
 
-export default MultipleRoutes
+export default App
