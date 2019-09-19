@@ -13,12 +13,6 @@ const About = () => (
   </div>
 )
 
-const Rendering = () => (
-  <div>
-    <h1>}{'Rendering'}</h1>
-  </div>
-)
-
 const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>
@@ -53,24 +47,21 @@ const MultipleRoutes = () => (
   <div>
     <ul>
       <li>
-        <Link to="/with-react-router">Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/with-react-router/about">About</Link>
+        <Link to="/about">About</Link>
       </li>
       <li>
-        <Link to="/with-react-router/topics">Topics</Link>
-      </li>
-      <li>
-        <a href="/">return to server</a>
+        <Link to="/topics">Topics</Link>
       </li>
     </ul>
 
     <hr />
 
-    <Route exact path="/with-react-router" component={Home} />
-    <Route path="/with-react-router/about" component={About} />
-    <Route path="/with-react-router/topics" component={Topics} />
+    <Route exact path="/" component={Home} />
+    <Route path="/about" component={About} />
+    <Route path="/topics" component={Topics} />
   </div>
 )
 

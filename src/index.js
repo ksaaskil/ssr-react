@@ -13,7 +13,7 @@ app.use(compression())
 
 app.use('/static', express.static(path.resolve(__dirname, 'public')))
 
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
   const { name = 'Marvelous Wololo' } = req.query
 
   const componentStream = ReactDOMServer.renderToNodeStream(
@@ -50,9 +50,9 @@ app.get('/', (req, res) => {
 
     res.end()
   })
-})
+}) */
 
-app.get('/with-react-router*', (req, res) => {
+app.get('*', (req, res) => {
   const context = {}
 
   const component = ReactDOMServer.renderToString(
