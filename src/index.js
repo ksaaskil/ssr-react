@@ -4,7 +4,6 @@ import path from 'path'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter as Router } from 'react-router-dom'
-import Hello from './public/components/Hello'
 import MultipleRoutes from './public/components/MultipleRoutes'
 
 const app = express()
