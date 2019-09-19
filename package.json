@@ -6,10 +6,10 @@
   "scripts": {
     "build": "webpack --mode=production && npm run copy_static_assets",
     "dev": "webpack && npm run copy_static_assets && concurrently \"webpack --watch\" \"nodemon dist\"",
-    "test": "webpack --config webpack.test.js && concurrently \"webpack --config webpack.test.js --watch\" \"mocha --watch\"",
+    "test-watch": "webpack --config webpack.test.js && concurrently \"webpack --config webpack.test.js --watch\" \"mocha --watch\"",
+    "test": "webpack --config webpack.test.js && mocha",
     "start": "NODE_ENV=production node dist/index.js",
-    "copy_static_assets": "node copyStaticAssets.js",
-    "deploy": "git push dokku master"
+    "copy_static_assets": "node copyStaticAssets.js"
   },
   "engines": {
     "node": "9.2.0"
@@ -38,10 +38,8 @@
     "concurrently": "^3.6.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
-    "fs-extra": "^7.0.1",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10",
-    "react-addons-test-utils": "^15.6.2",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
     "webpack-node-externals": "^1.7.2"
