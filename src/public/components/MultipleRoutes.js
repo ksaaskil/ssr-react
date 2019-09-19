@@ -13,6 +13,12 @@ const About = () => (
   </div>
 )
 
+const Rendering = () => (
+  <div>
+    <h1>}{'Rendering'}</h1>
+  </div>
+)
+
 const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>
@@ -39,7 +45,7 @@ const Topics = ({ match }) => (
 
 const Topic = ({ match }) => (
   <div>
-    <h3>{match.params.topicId}</h3>
+    <h3>{`Watching topic: ${match.params.topicId}`}</h3>
   </div>
 )
 
