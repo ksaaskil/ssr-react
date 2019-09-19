@@ -1,3 +1,13 @@
+# Server-side rendering with React
+
+_Forked and adapted from [this repository](https://github.com/MarvelousWololo/ssr-react)._
+
+- [x] Updated dependencies
+- [x] Deleted some unnecessary dependencies
+- [x] Deleted `Home` component
+
+_Original README by the repository author below._
+
 # How to server-side render React, hydrate it on the client and combine client and server routes
 
 In this article, I would like to share an easy way to server-side render
