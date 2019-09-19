@@ -71,7 +71,6 @@ app.get('*', (req, res) => {
     <body>
       <div id="root">${component}</div>
 
-      <script src="/static/vendors~home.js~multipleRoutes.js"></script>
       <script src="/static/vendors~multipleRoutes.js"></script>
       <script src="/static/multipleRoutes.js"></script>
     </body>
