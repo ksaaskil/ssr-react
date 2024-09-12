@@ -1,9 +1,13 @@
-const fs = require('fs-extra')
+const fs = require('fs')
+
+const copyToDist = (filename) => {
+  console.log(`Copying ${filename}...`)
+  fs.copyFileSync(`src/public/${filename}`, `dist/public/${filename}`)
+}
 
 try {
-  fs.copySync('src/public/favicon.ico', 'dist/public/favicon.ico')
-
-  console.log('######## static assets copy: OK ########')
+  copyToDist('favicon.ico')
+  console.log('Copied asserts.')
 } catch (err) {
-  console.error('######## static assets copy: ERROR ########', err.message)
+  console.error(`Failed copying assets: ${err.message}`)
 }

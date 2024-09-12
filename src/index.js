@@ -4,8 +4,7 @@ import path from 'path'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter as Router } from 'react-router-dom'
-import Hello from './public/components/Hello'
-import MultipleRoutes from './public/components/MultipleRoutes'
+import App from './public/components/App'
 
 const app = express()
 
@@ -13,7 +12,7 @@ app.use(compression())
 
 app.use('/static', express.static(path.resolve(__dirname, 'public')))
 
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
   const { name = 'Marvelous Wololo' } = req.query
 
   const componentStream = ReactDOMServer.renderToNodeStream(
@@ -50,14 +49,14 @@ app.get('/', (req, res) => {
 
     res.end()
   })
-})
+}) */
 
-app.get('/with-react-router*', (req, res) => {
+app.get('*', (req, res) => {
   const context = {}
 
   const component = ReactDOMServer.renderToString(
     <Router location={req.url} context={context}>
-      <MultipleRoutes />
+      <App />
     </Router>
   )
 
@@ -72,7 +71,6 @@ app.get('/with-react-router*', (req, res) => {
     <body>
       <div id="root">${component}</div>
 
-      <script src="/static/vendors~home.js~multipleRoutes.js"></script>
       <script src="/static/vendors~multipleRoutes.js"></script>
       <script src="/static/multipleRoutes.js"></script>
     </body>
@@ -97,4 +95,4 @@ app.get('*', (req, res) =>
 
 const { PORT = 3000 } = process.env
 
-app.listen(PORT, () => console.log('######## app running ########'))
+app.listen(PORT, () => console.log(`Listening on port ${PORT}...`))

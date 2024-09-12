@@ -9,7 +9,7 @@ const js = {
     loader: 'babel-loader',
     options: {
       presets: ['react', 'es2015'],
-      plugins: ['transform-class-properties']
+      plugins: []
     }
   }
 }
@@ -37,8 +37,7 @@ const clientConfig = {
   mode: 'development',
   target: 'web',
   entry: {
-    'home.js': path.resolve(__dirname, 'src/public/home.js'),
-    'multipleRoutes.js': path.resolve(__dirname, 'src/public/multipleRoutes.js')
+    'app.js': path.resolve(__dirname, 'src/public/app.js')
   },
   module: {
     rules: [js]
